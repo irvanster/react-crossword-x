@@ -13,6 +13,7 @@ const cellPropTypes = {
     guess: PropTypes.string, // .isRequired,
     number: PropTypes.string,
     answer: PropTypes.string,
+    randomKey: PropTypes.instanceOf(Array),
   }).isRequired,
 
   /** whether this cell has focus */

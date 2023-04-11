@@ -32,6 +32,8 @@ const clueInputPropsOriginal = {
   row: PropTypes.number.isRequired,
   /** The 0-based column on which the answer begins */
   col: PropTypes.number.isRequired,
+  /** The clue for keyboard */
+  randomKey: PropTypes.instanceOf(Array),
 };
 
 export const clueShapeOriginal = PropTypes.shape(clueInputPropsOriginal);
@@ -82,6 +84,8 @@ export type UsedCellData = GridPosition & {
   across?: string;
   /** If present, the clue-number key for the "down" for this cell */
   down?: string;
+  /** the clue for answer keyboard */
+  randomKey?: Array<string>;
 };
 
 /**
