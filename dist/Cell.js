@@ -16,6 +16,7 @@ const cellPropTypes = {
         guess: prop_types_1.default.string,
         number: prop_types_1.default.string,
         answer: prop_types_1.default.string,
+        randomKey: prop_types_1.default.instanceOf(Array),
     }).isRequired,
     /** whether this cell has focus */
     focus: prop_types_1.default.bool,

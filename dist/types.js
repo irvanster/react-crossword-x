@@ -23,6 +23,8 @@ const clueInputPropsOriginal = {
     row: prop_types_1.default.number.isRequired,
     /** The 0-based column on which the answer begins */
     col: prop_types_1.default.number.isRequired,
+    /** The clue for keyboard */
+    randomKey: prop_types_1.default.instanceOf(Array),
 };
 exports.clueShapeOriginal = prop_types_1.default.shape(clueInputPropsOriginal);
 exports.cluesInputShapeOriginal = prop_types_1.default.shape({
