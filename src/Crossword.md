@@ -46,6 +46,7 @@ In addition to providing properties for styling, there are some properties to he
 | `onLoadedCorrect`    | callback function that’s called when a crossword is loaded, to batch up correct answers loaded from storage; passed an array of the same values that `onCorrect` would recieve                                                                             |
 | `onCrosswordCorrect` | callback function that’s called when the overall crossword is completely correct (or not)                                                                                                                                                                  |
 | `onCellChange`       | callback function called when a cell changes (e.g. when the user types a letter); passed the row and column and the character typed                                                                                                                        |
+| `onCellFocus`        | callback function called when a cell focus (e.g. when the user tap cell); passed the row and column and the character typed                                                                                                                                |
 | `onClueSelected`     | callback function called when a clue is selected; passed the direction and the “number”                                                                                                                                                                    |
 
 ### Imperative methods

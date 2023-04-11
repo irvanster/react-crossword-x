@@ -160,6 +160,12 @@ export const crosswordProviderPropTypes = {
    * typed (already massaged into upper-case)
    */
   onCellChange: PropTypes.func,
+  /**
+   * callback function called when a cell changes (e.g. when the user tap cell); called with `(row, col)` arguments, where the `row` and
+   * `column` are the 0-based position of the cell, and `char` is the character
+   * typed (already massaged into upper-case)
+   */
+  onCellFocus: PropTypes.func,
 
   /**
    * callback function called when a clue is selected
@@ -264,6 +270,12 @@ export type CrosswordProviderProps = EnhancedProps<
      * character typed (already massaged into upper-case)
      */
     onCellChange?: (row: number, col: number, char: string) => void;
+    /**
+     * callback function called when a cell changes (e.g. when the user tap cell); called with `(row, col)` arguments, where the `row` and
+     * `column` are the 0-based position of the cell, and `char` is the character
+     * typed (already massaged into upper-case)
+     */
+    onCellFocus?: (row: number, col: number) => void;
 
     /**
      * callback function called when a clue is selected
@@ -339,6 +351,7 @@ const CrosswordProvider = React.forwardRef<
       onCrosswordComplete,
       onCrosswordCorrect,
       onCellChange,
+      onCellFocus,
       onClueSelected,
       useStorage,
       storageKey,
@@ -886,6 +899,9 @@ const CrosswordProvider = React.forwardRef<
           }
 
           setCurrentNumber(cellData[direction] ?? '');
+          if (onCellFocus) {
+            onCellFocus(row, col);
+          }
         }
 
         focus();
@@ -1132,6 +1148,7 @@ CrosswordProvider.defaultProps = {
   onCrosswordComplete: undefined,
   onCrosswordCorrect: undefined,
   onCellChange: undefined,
+  onCellFocus: undefined,
   onClueSelected: undefined,
   children: undefined,
 };
