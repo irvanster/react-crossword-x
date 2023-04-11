@@ -875,6 +875,7 @@ const CrosswordProvider = React.forwardRef<
       (cellData: CellData) => {
         if (cellData.used) {
           const { row, col } = cellData;
+          alert(JSON.stringify(cellData));
           const other = otherDirection(currentDirection);
 
           // should this use moveTo?

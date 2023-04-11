@@ -549,6 +549,7 @@ const CrosswordProvider = react_1.default.forwardRef(({ data, theme, onAnswerCom
         var _a;
         if (cellData.used) {
             const { row, col } = cellData;
+            alert(JSON.stringify(cellData));
             const other = (0, util_1.otherDirection)(currentDirection);
             // should this use moveTo?
             setFocusedRow(row);
