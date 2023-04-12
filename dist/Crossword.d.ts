@@ -14,7 +14,6 @@ declare const crosswordPropTypes: {
                 answer: PropTypes.Validator<string>;
                 row: PropTypes.Validator<number>;
                 col: PropTypes.Validator<number>;
-                randomKey: PropTypes.Requireable<unknown[]>;
             }>>;
         }>;
         down: PropTypes.Validator<{
@@ -23,7 +22,6 @@ declare const crosswordPropTypes: {
                 answer: PropTypes.Validator<string>;
                 row: PropTypes.Validator<number>;
                 col: PropTypes.Validator<number>;
-                randomKey: PropTypes.Requireable<unknown[]>;
             }>>;
         }>;
     }>>>;
@@ -71,7 +69,6 @@ declare const Crossword: React.ForwardRefExoticComponent<Omit<PropTypes.InferPro
                 answer: PropTypes.Validator<string>;
                 row: PropTypes.Validator<number>;
                 col: PropTypes.Validator<number>;
-                randomKey: PropTypes.Requireable<unknown[]>;
             }>>;
         }>;
         down: PropTypes.Validator<{
@@ -80,7 +77,6 @@ declare const Crossword: React.ForwardRefExoticComponent<Omit<PropTypes.InferPro
                 answer: PropTypes.Validator<string>;
                 row: PropTypes.Validator<number>;
                 col: PropTypes.Validator<number>;
-                randomKey: PropTypes.Requireable<unknown[]>;
             }>>;
         }>;
     }>>>;

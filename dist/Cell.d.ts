@@ -9,7 +9,6 @@ declare const cellPropTypes: {
         guess: PropTypes.Requireable<string>;
         number: PropTypes.Requireable<string>;
         answer: PropTypes.Requireable<string>;
-        randomKey: PropTypes.Requireable<unknown[]>;
     }>>>;
     /** whether this cell has focus */
     focus: PropTypes.Requireable<boolean>;
@@ -42,7 +41,6 @@ declare namespace Cell {
             guess: PropTypes.Requireable<string>;
             number: PropTypes.Requireable<string>;
             answer: PropTypes.Requireable<string>;
-            randomKey: PropTypes.Requireable<unknown[]>;
         }>>>;
         /** whether this cell has focus */
         focus: PropTypes.Requireable<boolean>;

@@ -8,7 +8,7 @@ import Crossword, {
   CrosswordProviderProps,
   DirectionClues,
   useIpuz,
-} from '@jaredreisinger/react-crossword';
+} from '@irvanster/react-crossword-x';
 import styled from 'styled-components';
 
 const data = {
@@ -18,6 +18,7 @@ const data = {
       answer: 'TWO',
       row: 0,
       col: 0,
+      randomKey: ['X', 'A', 'P'],
     },
   },
   down: {
@@ -26,6 +27,7 @@ const data = {
       answer: 'ONE',
       row: 0,
       col: 2,
+      randomKey: ['P', 'D', 'L'],
     },
   },
 };
@@ -536,6 +538,9 @@ function App() {
             onLoadedCorrect={onLoadedCorrect}
             onCrosswordCorrect={onCrosswordCorrect}
             onCellChange={onCellChange}
+            onCellFocus={(selectedCell) =>
+              console.log(selectedCell, 'ini dari oncellfocus-----')
+            }
           />
         </CrosswordWrapper>
 

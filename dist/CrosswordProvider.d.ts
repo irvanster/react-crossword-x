@@ -11,21 +11,19 @@ export declare const crosswordProviderPropTypes: {
         across: PropTypes.Validator<{
             [x: string]: NonNullable<PropTypes.InferProps<{
                 clue: PropTypes.Validator<string>;
-                answer: PropTypes.Validator<string>; /** presentation values for the crossword; these override any values coming from a parent ThemeProvider context. */
+                answer: PropTypes.Validator<string>;
                 row: PropTypes.Validator<number>;
                 col: PropTypes.Validator<number>;
-                randomKey: PropTypes.Requireable<unknown[]>;
             }>>;
         }>;
         down: PropTypes.Validator<{
             [x: string]: NonNullable<PropTypes.InferProps<{
                 clue: PropTypes.Validator<string>;
-                answer: PropTypes.Validator<string>; /** presentation values for the crossword; these override any values coming from a parent ThemeProvider context. */
+                answer: PropTypes.Validator<string>;
                 row: PropTypes.Validator<number>;
                 col: PropTypes.Validator<number>;
-                randomKey: PropTypes.Requireable<unknown[]>;
             }>>;
-        }>;
+        }>; /**  background for an answer cell */
     }>>>;
     /** presentation values for the crossword; these override any values coming from a parent ThemeProvider context. */
     theme: PropTypes.Requireable<PropTypes.InferProps<{
@@ -215,7 +213,7 @@ export type CrosswordProviderProps = EnhancedProps<typeof crosswordProviderPropT
      * `column` are the 0-based position of the cell, and `char` is the character
      * typed (already massaged into upper-case)
      */
-    onCellFocus?: (row: number, col: number) => void;
+    onCellFocus?: (selectedCell: any) => void;
     /**
      * callback function called when a clue is selected
      */
@@ -265,21 +263,19 @@ declare const CrosswordProvider: React.ForwardRefExoticComponent<Omit<PropTypes.
         across: PropTypes.Validator<{
             [x: string]: NonNullable<PropTypes.InferProps<{
                 clue: PropTypes.Validator<string>;
-                answer: PropTypes.Validator<string>; /** presentation values for the crossword; these override any values coming from a parent ThemeProvider context. */
+                answer: PropTypes.Validator<string>;
                 row: PropTypes.Validator<number>;
                 col: PropTypes.Validator<number>;
-                randomKey: PropTypes.Requireable<unknown[]>;
             }>>;
         }>;
         down: PropTypes.Validator<{
             [x: string]: NonNullable<PropTypes.InferProps<{
                 clue: PropTypes.Validator<string>;
-                answer: PropTypes.Validator<string>; /** presentation values for the crossword; these override any values coming from a parent ThemeProvider context. */
+                answer: PropTypes.Validator<string>;
                 row: PropTypes.Validator<number>;
                 col: PropTypes.Validator<number>;
-                randomKey: PropTypes.Requireable<unknown[]>;
             }>>;
-        }>;
+        }>; /**  background for an answer cell */
     }>>>;
     /** presentation values for the crossword; these override any values coming from a parent ThemeProvider context. */
     theme: PropTypes.Requireable<PropTypes.InferProps<{
@@ -468,7 +464,7 @@ declare const CrosswordProvider: React.ForwardRefExoticComponent<Omit<PropTypes.
      * `column` are the 0-based position of the cell, and `char` is the character
      * typed (already massaged into upper-case)
      */
-    onCellFocus?: ((row: number, col: number) => void) | undefined;
+    onCellFocus?: ((selectedCell: any) => void) | undefined;
     /**
      * callback function called when a clue is selected
      */

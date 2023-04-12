@@ -20,8 +20,6 @@ declare const clueInputPropsOriginal: {
     row: PropTypes.Validator<number>;
     /** The 0-based column on which the answer begins */
     col: PropTypes.Validator<number>;
-    /** The clue for keyboard */
-    randomKey: PropTypes.Requireable<unknown[]>;
 };
 export declare const clueShapeOriginal: PropTypes.Requireable<PropTypes.InferProps<{
     /** The clue to display */
@@ -32,8 +30,6 @@ export declare const clueShapeOriginal: PropTypes.Requireable<PropTypes.InferPro
     row: PropTypes.Validator<number>;
     /** The 0-based column on which the answer begins */
     col: PropTypes.Validator<number>;
-    /** The clue for keyboard */
-    randomKey: PropTypes.Requireable<unknown[]>;
 }>>;
 export type ClueTypeOriginal = InferProps<typeof clueInputPropsOriginal>;
 export declare const cluesInputShapeOriginal: PropTypes.Requireable<PropTypes.InferProps<{
@@ -48,8 +44,6 @@ export declare const cluesInputShapeOriginal: PropTypes.Requireable<PropTypes.In
             row: PropTypes.Validator<number>;
             /** The 0-based column on which the answer begins */
             col: PropTypes.Validator<number>;
-            /** The clue for keyboard */
-            randomKey: PropTypes.Requireable<unknown[]>;
         }>>;
     }>;
     /** "down" clues and answers */
@@ -63,8 +57,6 @@ export declare const cluesInputShapeOriginal: PropTypes.Requireable<PropTypes.In
             row: PropTypes.Validator<number>;
             /** The 0-based column on which the answer begins */
             col: PropTypes.Validator<number>;
-            /** The clue for keyboard */
-            randomKey: PropTypes.Requireable<unknown[]>;
         }>>;
     }>;
 }>>;
@@ -96,8 +88,6 @@ export type UsedCellData = GridPosition & {
     across?: string;
     /** If present, the clue-number key for the "down" for this cell */
     down?: string;
-    /** the clue for answer keyboard */
-    randomKey?: Array<string>;
 };
 /**
  * The data stored/returned for a specific unused or out-of-bounds cell/position

@@ -275,7 +275,7 @@ export type CrosswordProviderProps = EnhancedProps<
      * `column` are the 0-based position of the cell, and `char` is the character
      * typed (already massaged into upper-case)
      */
-    onCellFocus?: (row: number, col: number) => void;
+    onCellFocus?: (selectedCell: any) => void;
 
     /**
      * callback function called when a clue is selected
@@ -875,14 +875,17 @@ const CrosswordProvider = React.forwardRef<
       (cellData: CellData) => {
         if (cellData.used) {
           const { row, col } = cellData;
-          alert(JSON.stringify(cellData));
           const other = otherDirection(currentDirection);
-
           // should this use moveTo?
           setFocusedRow(row);
           setFocusedCol(col);
 
           let direction = currentDirection;
+          const cellDataAll = { ...data.across, ...data.down };
+          const cellAccross = cellData.across ?? '';
+          const cellDown = cellData.down ?? '';
+          const selectedCell = cellDataAll[cellAccross || cellDown];
+          // CHORE: when across and down it is not empty, then the default is across, make sure first?
 
           // We switch to the "other" direction if (a) the current direction
           // isn't available in the clicked cell, or (b) we're already focused
@@ -901,7 +904,7 @@ const CrosswordProvider = React.forwardRef<
 
           setCurrentNumber(cellData[direction] ?? '');
           if (onCellFocus) {
-            onCellFocus(row, col);
+            onCellFocus(selectedCell);
           }
         }
 
