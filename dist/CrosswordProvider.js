@@ -554,11 +554,11 @@ const CrosswordProvider = react_1.default.forwardRef(({ data, theme, onAnswerCom
             setFocusedRow(row);
             setFocusedCol(col);
             let direction = currentDirection;
-            let cellDataAll = Object.assign(Object.assign({}, data.across), data.down);
-            let cellAccross = (_a = cellData.across) !== null && _a !== void 0 ? _a : '';
-            let cellDown = (_b = cellData.down) !== null && _b !== void 0 ? _b : '';
+            const cellDataAll = Object.assign(Object.assign({}, data.across), data.down);
+            const cellAccross = (_a = cellData.across) !== null && _a !== void 0 ? _a : '';
+            const cellDown = (_b = cellData.down) !== null && _b !== void 0 ? _b : '';
             const selectedCell = cellDataAll[cellAccross || cellDown];
-            //CHORE: when across and down it is not empty, then the default is across, make sure first?
+            // CHORE: when across and down it is not empty, then the default is across, make sure first?
             // We switch to the "other" direction if (a) the current direction
             // isn't available in the clicked cell, or (b) we're already focused
             // and the clicked cell is the focused cell, *and* the other direction
@@ -573,7 +573,7 @@ const CrosswordProvider = react_1.default.forwardRef(({ data, theme, onAnswerCom
             }
             setCurrentNumber((_c = cellData[direction]) !== null && _c !== void 0 ? _c : '');
             if (onCellFocus) {
-                onCellFocus(selectedCell);
+                onCellFocus(Object.assign(Object.assign({}, selectedCell), { currentRow: row, currentCol: col }));
             }
         }
         focus();
