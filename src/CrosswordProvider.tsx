@@ -904,7 +904,11 @@ const CrosswordProvider = React.forwardRef<
 
           setCurrentNumber(cellData[direction] ?? '');
           if (onCellFocus) {
-            onCellFocus(selectedCell);
+            onCellFocus({
+              ...selectedCell,
+              currentRow: row,
+              currentCol: col,
+            });
           }
         }
 
