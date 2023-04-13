@@ -234,6 +234,7 @@ export default function CrosswordGrid({ theme }: CrosswordGridProps) {
               spellCheck="false"
               autoCorrect="off"
               style={inputStyle}
+              inputMode="none" // hide soft keyboard on mobile devices
             />
           </div>
         </GridWrapper>
